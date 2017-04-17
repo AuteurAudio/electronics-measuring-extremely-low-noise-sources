@@ -14,13 +14,16 @@ If you look at the spectral graph, particularly in the lower frequency range, sa
 quite low, nearly -150dBV.  This equates to a better than -120dBV wideband audio performance, which
 is pretty good.  Pretty good in part because this figure equates to >120dB SNR for typical listening 
 levels (rather than maximum output, which is often the improbable output level typically reported).  This means
-that we can use this amplifier to enjoy 24 bit audio at normal listening levels and actually be able to 
+that we can use this amplifier to enjoy 20 bit audio at normal listening levels and actually be able to 
 resolve the full depth.  A good homework exercise would be to list for yourself the converters that actually 
-best this amplifier in terms of their rated SNR or dynamic range.  
+best this amplifier in terms of their rated SNR or dynamic range.  This should come as an entertaining exercise
+for some, as the bit depths of converters have generally vastly exceeded the SNR over the years, probably
+as a marketing competition.
 
-One big question tends to be "how can I measure my amplifier's performance as well or better than the high 
-end [Audio Precision](https://www.ap.com/) gear for the quantities that I feel are most relevant for my 
-amplifier, and how can I do this at home one the cheap ."  That is what this document attempts to discuss.  
+A big question tends to be: "How can I measure my amplifier's performance as well or better than the high 
+end [Audio Precision](https://www.ap.com/) gear, at least for the quantities that I feel are most relevant for my 
+amplifier, and how can I do this at home one the cheap?"  That is what this document attempts to 
+discuss.  
 
 
 
