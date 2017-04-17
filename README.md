@@ -14,5 +14,5 @@ If you look at the spectral graph, particularly in the lower frequency range, sa
 quite low, nearly -150dBV.  This equates to a better than -120dBV wideband audio performance, which
 is pretty good.  The question tends to be "how can I measure my amplifier's performance as well or 
 better than the high end [Audio Precision](https://www.ap.com/) gear for the quantities that I feel 
-are most relevant for my amplifier."  That is what this document attempts to discuss.
+are most relevant for my amplifier (and moreover, do it at home)."  That is what this document attempts to discuss.
 
