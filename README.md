@@ -16,7 +16,7 @@ is pretty good.  Pretty good in part because this figure equates to >120dB SNR f
 levels (rather than maximum output, which is often the improbable output level typically reported).  This means
 that we can use this amplifier to enjoy 24 bit audio at normal listening levels and actually be able to 
 resolve the full depth.  A good homework exercise would be to list for yourself the converters that actually 
-best this amplifier.  
+best this amplifier in terms of their rated SNR or dynamic range.  
 
 One big question tends to be "how can I measure my amplifier's performance as well or better than the high 
 end [Audio Precision](https://www.ap.com/) gear for the quantities that I feel are most relevant for my 
