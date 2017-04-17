@@ -68,4 +68,10 @@ frequency), so this type of noise is also often called 1/f noise.  For a great n
 devices, you will note that there is an indication of some frequency where the 1/f noise becomes 
 dominant.  For example, take a look at the datasheet for the [LT1128](http://www.linear.com/docs/3480) 
 op-amp.  It cites a 1/f corner frequency, which is the frequency below which the shot noise is significant 
-compared with the Johnson noise in the example circuit.
+compared with the Johnson noise in the example circuit.  The general task as a designer is to position 
+the shot noise so that it is below human hearing.  This places your product where the Johnson noise is 
+you primary concern.
+
+
+
+### Johnson Noise
