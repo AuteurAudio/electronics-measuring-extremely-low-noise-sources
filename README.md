@@ -94,11 +94,15 @@ on each side, is a fitting model of some resistor R.  Since each mode contribute
 some temperature T, it is then possible to compute the total power associated with the system.  This leads 
 us to the familiar equation for the thermal voltage noise of a resistor:
 
- * v = sqrt(4kTR df)
+<p align="left">
+![Noise Voltage](NoiseVoltage.png)
+</p>
 
 Similarly for the current noise:
 
- * i = sqrt(4kt df / R)
+<p align="left">
+![Noise Current](NoiseCurrent.png)
+</p>
  
 This is very important to keep in mind, as we will repeatedly refer to this.  In part because it is 
 fundamental, in part because one very convenient measure of noise as a baseline is the Johnson noise 
