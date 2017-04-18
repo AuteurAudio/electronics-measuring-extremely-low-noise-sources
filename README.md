@@ -95,13 +95,13 @@ some temperature T, it is then possible to compute the total power associated wi
 us to the familiar equation for the thermal voltage noise of a resistor:
 
 <p align="left">
-<img src="NoiseVoltage.png" height="1.5em;" />
+<img src="NoiseVoltage.png" height=30 />
 </p>
 
 Similarly for the current noise:
 
 <p align="left">
-<img src="NoiseCurrent.png" height="1.5em;" />
+<img src="NoiseCurrent.png" height=30 />
 </p>
  
 This is very important to keep in mind, as we will repeatedly refer to this.  In part because it is 
