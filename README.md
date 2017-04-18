@@ -95,7 +95,7 @@ some temperature T, it is then possible to compute the total power associated wi
 us to the familiar equation for the thermal voltage noise of a resistor:
 
 <p align="left">
-<img src="NoiseVoltage.png" height=60 />
+<img src="NoiseVoltage.png" height=45 />
 </p>
 
 Similarly for the current noise:
@@ -110,5 +110,51 @@ of a resistor having some (normally small) value R.
 
 
 
-### Noise And Input Impedance 
+### Input Impedance and Noise
 
+How input noise affects your circuit is related to the source impedance and the input impedance of you
+circuit.  Let's illustrate this with a practical example of an old research amplifier, the EG&G PAR 113,
+which has a noise figure plot in the manual:
+
+![PAR 113 Noise Curve](PAR113NoiseCurve.png)
+
+Most nice equipment, particularly older research equipment, would provide you a figure like this.  As you 
+can see, the noise figure is lowest with a source impedance of just over 1 Megohm (and just over
+100 Hertz).  On the surface, this curve seems to indicate something intrinsic to the amplifier.  And it 
+does to some degree; for example, we can see that it has a very limited low noise bandwidth.  However, the
+story has to do with the entire circuit.  Let's discuss a specific example to illustrate.
+
+Suppose you have a rather low source impedance, say 100 ohms.  Further suppose this has a RMS noise voltage
+at room temperatue for a 10KHz bandwidth of 127nV (see, told you would would use the noise equation).  This is quite 
+low, but note too that the signal is likely quite low given its development into 100 ohms (maybe it is a 
+photodetector or some other current source as might be used in a lab).  However, we are also looking at a noise 
+figure (from the curve) of about 17dB, which amounts to a 17dB reduction in SNR.  If, however, we were using 
+a 1 Megohm source, the noise figure would be very close to zero.  The reason for the higher noise figure 
+in great part has to do simply with the impedance mismatch.  Some signal developed over a 100 ohm source 
+resistance would have to be amplified significantly more in order to have the same output signal level,
+and that imparts noise.  The noise figure is simply a measure of the reduction in SNR because of having to
+do this.
+
+If, however, we were to use a 1 Megohm source impedance, we would not have that extra amplification requirement,
+and we would be able to keep the noise lower.  The thing to keep in mind, however, is that there is no
+free lunch with respect to the input noise.  If you used a 1 Megohm input resistance you would have 100 times
+the Johnson noise, or 12.7uV.  What you would typically do for a grossly mismatched impedance for an AC signal
+would be to transformer couple the signal with a high quality transformer.  Notice that you don't gain anything
+doing this with respect to the noise.  The same square root appears in the arithmetic for the impedance
+matching, and you still end up with a souce that *looks like* 1 Megohm and has a thermal noise of 12.7uV.  Grossly
+increasing the source impedance simply makes the PAR 113 hard to drive and also exhibits SNR loss (or an
+increase in noise figure).
+
+So what is the take away lesson here?  It is really critical to design your circuit with the right input
+impedance for the source your are interested in.  For high gain circuits in particular, a prime driver
+of the noise is directly related to the input impedance and the input impedance matching.  It is also fairly
+handy to have a rough knowledge of the Johnson noise for various impedances, as that gives you a sense of 
+what you are designing for.  For example, a 10k resistor has a thermal noise at room temperature and 20KHz 
+bandwidth of about 1.8uV.  For a point of reference refering to earlier in the story, what we are saying is 
+that inclusive of the power line noise that is a *significant* component of the total noise, and unrelated
+to the noise of the amplifier, Lilienfeld's Choir *still* exhibits noise that is lower than what you would experience
+if you hooked your headphones up to a 10k resistor.
+
+
+
+### Common Test Equipment
