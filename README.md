@@ -95,7 +95,7 @@ some temperature T, it is then possible to compute the total power associated wi
 us to the familiar equation for the thermal voltage noise of a resistor:
 
 <p align="left">
-![Noise Voltage](NoiseVoltage.png)
+<img src="NoiseVoltage.png" />
 </p>
 
 Similarly for the current noise:
