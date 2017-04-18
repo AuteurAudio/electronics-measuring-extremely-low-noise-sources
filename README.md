@@ -16,7 +16,11 @@ is pretty good.  Pretty good in part because this figure equates to >120dB SNR f
 levels (rather than maximum output, which is often the improbable output level typically reported).  If 
 you have ever paid attention to the specifications on 
 [Audio Precision's high end gear](https://www.ap.com/analyzers-accessories/apx555/), you may note that 
-this is getting pretty close to the limits of resolution.  Again, pretty good.
+this is getting pretty close to the limits of resolution.  It might be a little tricky
+to trust these measurements of this amplifier from 
+[PrismSound's dScope gear](http://www.prismsound.com/test_measure/products_subs/dscope/dscope_spec.php)
+because of the slightly higher noise floor.  All in all, pretty good performance for an amplifier if 
+you have to exercise such care with such quality test equipment.
 
 What all this means is that we can use this amplifier to enjoy 20 bit audio at normal listening levels and 
 actually be able to resolve the full depth.  A good homework exercise would be to list for yourself 
@@ -25,12 +29,14 @@ should come as an entertaining exercise for some, as the bit depths of converter
 vastly exceeded the SNR over the years, probably as competitive marketing to foolish consumers.  For our purposes 
 here we will just glaze over things like noise shaping and keep with the more simplistic view that we 
 are doing well if, under normal listening levels, we can create an amplifier that has comparable 
-performance with the SNR for the best converters.
+performance with the SNR of the best converters.
 
 The point of this document is to answer the question: "How can I measure my device's performance as well 
 (or better) than high end audio test gear, but on a shoestring budget using common equipment and supplies 
 found on my workbench?"  Of course the answer to this is understanding the source, amplification and
-measurement of noise, which is what this document is really about.
+measurement of noise, which is what this document is really about.  A secondary point of the document is
+to reinforce the idea that certain things are perhaps more important than other things in designing an
+amplifier.  In my mind, noise and responsiveness are the most critical aspects of a good amplifier.
 
 
 
@@ -96,8 +102,9 @@ Similarly for the current noise:
  
 This is very important to keep in mind, as we will repeatedly refer to this.  In part because it is 
 fundamental, in part because one very convenient measure of noise as a baseline is the Johnson noise 
-of a resistor of some (normally small) value R.
+of a resistor having some (normally small) value R.
 
 
 
 ### Noise And Input Impedance 
+
