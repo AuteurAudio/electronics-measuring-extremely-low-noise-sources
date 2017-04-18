@@ -153,7 +153,10 @@ what you are designing for.  For example, a 10k resistor has a thermal noise at 
 bandwidth of about 1.8uV.  For a point of reference refering to earlier in the story, what we are saying is 
 that inclusive of the power line noise that is a *significant* component of the total noise, and unrelated
 to the noise of the amplifier, Lilienfeld's Choir *still* exhibits noise that is lower than what you would experience
-if you hooked your headphones up to a 10k resistor.
+if you hooked your headphones up to a 10k resistor.  What we are also saying here is that while some equipment
+like the old PAR 113 might seem appealing for helping design these low noise circuits, it really isn't 
+appropriate for the typical impedances seen in audio amplifiers.  You really need a much lower noise amplifier
+with a much lower input impedance to help understand the noise characteristics of your designs.
 
 
 
