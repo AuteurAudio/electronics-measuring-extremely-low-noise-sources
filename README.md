@@ -53,12 +53,14 @@ most insidious entry point is through the power supply.  Rectification without a
 can lead to higher harmonics that are harder to suppress.  Many circuits do not reject power supply
 noise all that well, leading to significant problems.  The pervasiveness of the problem is clearly 
 seen in the above graph.  The amplifier isn't passing the noise, it is simply picked up in the leads 
-on a peice of equipment offering first class resilience to such noise.  Of course there are other
+on a piece of equipment offering first class resilience to such noise.  Of course there are other
 sources of spurious noise, the most common being digital circuits with free running oscillators.  These
 clock pulses can be divided and become audible.  One must watch their design carefully when using 
 digital components to ensure that these spurious noises are not coupled to the analog stage.  Unfortunately,
-there is no practical solution to completely avoid these.  It is inevitable that many of today's 
-devices require wall power and either have digital components or likely will be positioned near them.  
+there is no practical solution to completely avoid these (batteries are the obvious first choice, you can
+find plenty of examples of manufacturers who try to thwart the problem with this approach).  Unfortunately,
+it is inevitable that you will run into these problems in todays electrified and connected world.  The 
+best thing to do is tackle the problem head-on and without compromise.
 
 Shot noise is noise that originates from Poisson processes.  This means that it is noise originating 
 from the occurance of some event that has a probability of happening after some time.  Some electron
@@ -68,10 +70,34 @@ frequency), so this type of noise is also often called 1/f noise.  For a great n
 devices, you will note that there is an indication of some frequency where the 1/f noise becomes 
 dominant.  For example, take a look at the datasheet for the [LT1128](http://www.linear.com/docs/3480) 
 op-amp.  It cites a 1/f corner frequency, which is the frequency below which the shot noise is significant 
-compared with the Johnson noise in the example circuit.  The general task as a designer is to position 
-the shot noise so that it is below human hearing.  This places your product where the Johnson noise is 
-you primary concern.
+compared with the Johnson noise in the example circuit.  If the device you are interested in does not 
+cite information about shot noise, you might reconsider whether or not the product was actually 
+intended for low noise application.  The general task as a designer is to position the shot noise so 
+that it is below human hearing.  This places your product where the Johnson noise is you primary concern.
 
 
 
 ### Johnson Noise
+
+Johnson noise, also called thermal noise, is noise that is uniformly distributed by frequency.  That is,
+Johnson noise is white noise (whereas shot noise is what you would term pink noise).  The idea of Johnson noise 
+was actually established by Nyquist (of sampling fame; Johnson's work involved showing that the idea 
+is fundamental to all materials), and is based on the equipartition law of thermodynamics.  The critical
+idea is that standing wave oscillation of a lossless transmission line, terminated by resistors to ground
+on each side, is a fitting model of some resistor R.  Since each mode contributes the same energy kT, for 
+some temperature T, it is then possible to compute the total power associated with the system.  This leads 
+us to the familiar equation for the thermal voltage noise of a resistor:
+
+ * v = sqrt(4kTR df)
+
+Similarly for the current noise:
+
+ * i = sqrt(4kt df / R)
+ 
+This is very important to keep in mind, as we will repeatedly refer to this.  In part because it is 
+fundamental, in part because one very convenient measure of noise as a baseline is the Johnson noise 
+of a resistor of some (normally small) value R.
+
+
+
+### Noise And Input Impedance 
