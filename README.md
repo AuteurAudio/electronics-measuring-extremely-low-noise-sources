@@ -161,3 +161,37 @@ with a much lower input impedance to help understand the noise characteristics o
 
 
 ### Common Test Equipment
+
+The average person's test bench isn't really geared toward quantifying low noise amplifiers.  The typical
+scope generally doesn't go much below 1mV per division.  Unless you splurge on a fairly exotic or expensive 
+meter, the accuracy and linearity isn't really all that good, not to mention the very real wonderment of 
+exactly what sort of average it would detect with noise, particularly broadband.   There are some very good
+meters that can measure noise, an example being thermal balancing meters that introduce a DC current that 
+controls the meter movement that balances the heat dissipated by a broadband AC source.  There are also very
+good digital meters that compute RMS.  
+
+What I find to be probably the best is a sampling scope.  The reason for this is that generally these scopes 
+provide sample averaging that limits the effect of high frequency noise for bandwidth limited sampling, as 
+we would use for measuring the audio band.  Moreover, they generally have a number of convenient built-in 
+functions such as RMS reporting that operates on the sampled data, giving you reasonable confidence in the 
+result since you can tell exactly what it is doing.  You can often export the samples so that you can load
+the data and do your own arithmetic if you prefer.  Much of this you could also do using your soundcard, but
+I do not have much experience using this route.  The biggest issues I am sure would be feeling confident in
+the magnitude of the measurements.  Also, sampling scopes generally have significantly faster possible 
+sampling, which you can use to identify other issues.  I would strongly encourage a halfway decent sampling 
+scope being on your bench.
+
+There are a number of more exotic pieces that you can use.  The old wave analyzers can be very helpful.  However,
+they are generally used as a frequency selective meter, which can be a bit indirect for use with determining
+broadband noise.  As well, they are becoming a bit scarce since they haven't been made for a number of years.  If 
+you are up for a bit of a challenge and want to learn about a very clever type of older gear, perhaps you would
+enjoy learning about the wave analyzers.
+
+For the rest of this discussion on measuring noise, I will presume that you have a sampling scope that has 
+reasonable abilities in terms of the lowest measurement range.  This will give us a very good starting point
+for what we would need to do in terms of manipulating our minute noise signal so that we can measure it with 
+reliability enough to make claims about quantifying the noise.
+
+
+
+### Amplifying Measurement Noise
