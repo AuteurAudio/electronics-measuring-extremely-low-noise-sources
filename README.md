@@ -185,7 +185,10 @@ There are a number of more exotic pieces that you can use.  The old wave analyze
 they are generally used as a frequency selective meter, which can be a bit indirect for use with determining
 broadband noise.  As well, they are becoming a bit scarce since they haven't been made for a number of years.  If 
 you are up for a bit of a challenge and want to learn about a very clever type of older gear, perhaps you would
-enjoy learning about the wave analyzers.
+enjoy learning about the wave analyzers.  Take a look at the noise floor of the venerable HP 3581, one of the 
+finest pieces of gear made for the audio range:
+
+![HP3581 Noise](HP3581Noise.png)
 
 For the rest of this discussion on measuring noise, I will presume that you have a sampling scope that has 
 reasonable abilities in terms of the lowest measurement range.  This will give us a very good starting point
