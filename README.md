@@ -95,13 +95,13 @@ some temperature T, it is then possible to compute the total power associated wi
 us to the familiar equation for the thermal voltage noise of a resistor:
 
 <p align="left">
-<img src="NoiseVoltage.png" height=45 />
+<img src="images/NoiseVoltage.png" height=45 />
 </p>
 
 Similarly for the current noise:
 
 <p align="left">
-<img src="NoiseCurrent.png" height=60 />
+<img src="images/NoiseCurrent.png" height=60 />
 </p>
  
 This is very important to keep in mind, as we will repeatedly refer to this.  In part because it is 
@@ -116,7 +116,7 @@ How input noise affects your circuit is related to the source impedance and the 
 circuit.  Let's illustrate this with a practical example of an old research amplifier, the EG&G PAR 113,
 which has a noise figure plot in the manual:
 
-![PAR 113 Noise Curve](PAR113NoiseCurve.png)
+![PAR 113 Noise Curve](images/PAR113NoiseCurve.png)
 
 Most nice equipment, particularly older research equipment, would provide you a figure like this.  As you 
 can see, the noise figure is lowest with a source impedance of just over 1 Megohm (and just over
@@ -186,9 +186,9 @@ they are generally used as a frequency selective meter, which can be a bit indir
 broadband noise.  As well, they are becoming a bit scarce since they haven't been made for a number of years.  If 
 you are up for a bit of a challenge and want to learn about a very clever type of older gear, perhaps you would
 enjoy learning about the wave analyzers.  Take a look at the noise floor of the venerable HP3581's 
-[manual](HP3581Manual.pdf), one of the finest pieces of gear made for the audio range:
+[manual](documents/HP3581Manual.pdf), one of the finest pieces of gear made for the audio range:
 
-![HP3581 Noise](HP3581Noise.png)
+![HP3581 Noise](images/HP3581Noise.png)
 
 For the rest of this discussion on measuring noise, I will presume that you have a sampling scope that has 
 reasonable abilities in terms of the lowest measurement range.  This will give us a very good starting point
