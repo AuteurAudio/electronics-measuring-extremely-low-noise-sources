@@ -185,8 +185,8 @@ There are a number of more exotic pieces that you can use.  The old wave analyze
 they are generally used as a frequency selective meter, which can be a bit indirect for use with determining
 broadband noise.  As well, they are becoming a bit scarce since they haven't been made for a number of years.  If 
 you are up for a bit of a challenge and want to learn about a very clever type of older gear, perhaps you would
-enjoy learning about the wave analyzers.  Take a look at the noise floor of the venerable HP 3581, one of the 
-finest pieces of gear made for the audio range:
+enjoy learning about the wave analyzers.  Take a look at the noise floor of the venerable HP3581's 
+[manual](HP3581Manual.pdf), one of the finest pieces of gear made for the audio range:
 
 ![HP3581 Noise](HP3581Noise.png)
 
