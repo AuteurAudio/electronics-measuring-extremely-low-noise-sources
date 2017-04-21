@@ -26,7 +26,8 @@ What all this means is that we can use this amplifier to enjoy 20 bit audio at n
 actually be able to resolve the full depth.  A good homework exercise would be to list for yourself 
 the converters that actually best this amplifier in terms of their rated SNR or dynamic range.  This 
 should come as an entertaining exercise for some, as the bit depths of converters have generally 
-vastly exceeded the SNR over the years, probably as competitive marketing to foolish consumers.  For our purposes 
+vastly exceeded the SNR over the years, probably as competitive marketing to foolish consumers and to 
+provide market expansion potential for the digital volume control folks.  For our purposes 
 here we will just glaze over things like noise shaping and keep with the more simplistic view that we 
 are doing well if, under normal listening levels, we can create an amplifier that has comparable 
 performance with the SNR of the best converters.
