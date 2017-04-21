@@ -197,4 +197,66 @@ reliability enough to make claims about quantifying the noise.
 
 
 
-### Amplifying Measurement Noise
+### Selecting Parts For A Noise Amplifier
+
+Now that we know that one the best tools we could have for quantifying our noise is our bench sampling scope,
+and we know that the low level range on our scope is on the order of millivolts, we clearly need to design a 
+good quality amplifier that has very low noise.  Moreover, we need to be able to quantify the amplifier itself,
+because in the face of measuring other low noise signals, we will likely need to be able to differentiate 
+the noise of our source from the noise of the amplifier we are using to make the signal palettable for the
+scope.
+
+Of course there are two approaches that can be taken with regard to this preamplifier.  One is the discrete 
+approach, the other is the op-amp approach.  In this document I am going to present the op-amp approach.  The
+reasons for this are sevaral.  First, device selection is simpler since you are choosing one device rather
+than needing to make different device selection for the various parts of the amplifier.  Second, compensating
+the circuit requires less nuance than in the discreet case since this is typically done for you.  Third, especial
+care is always required of the first stage of any multi-stage amplifier since it is the largest contributor to 
+the output noise, and the designers of the low noise op-amps can produce these initial gain stages with a greater
+degree of control than you can select discrete components.  There is always a time and place for adding 
+a discrete stage, and I am generally a great proponent of this.  However, the practical reality for signal-level
+amplification such as this is that the modern low noise op-amp is a very good choice often offering better 
+performance, lower cost and signficant simplification of design.  Concern yourself with designing your audio
+circuit with discrete components, not the pre-amp for measuring the noise.
+
+When you are looking for a good op-amp for use in a high gain amplifier like this, you are looking for three
+major things.  First, you are looking for incredibly low equivalent input noise.  This figure simply indicates
+what the intrinsic noise of the amplifier is expressed as an equivalent noise source applied to a zero noise
+amplifier.  You will generally find this figure expressed as a noise voltage per bandwidth.  Recall our 
+Johnson noise equation, noting that the units for a given resistance and temperature would be volts per 
+square root of the bandwidth.  You will generally find the equivalent input noise expressed as nanovolts per 
+root Hertz, and you will be selecting a device that has this figure less than one nanovolt per root Hertz.  
+
+Second, you are looking at the inflection point in the noise graph indicative of where the shot noise 
+starts dominating the total noise.  This is where the noise attributable to the Poissonian processes in the 
+circuit dominate the uniform spectral noise that is a result of components operating above absolute zero 
+temperature.  The important thing in any audio application, this one being no different since we are wanting
+to quantify a circuit operating in the audio range, is to select a device where the inflection point is as 
+low as possible.  For modern low noise op-amps this will likely be a few Hertz.  
+
+Third, you are looking at the gain-bandwidth product of the amplifier, and to a lesser extend it's gain
+stability.  I say to a lesser extend the gain stability because we are operating in a low feedback, high
+gain mode in this circuit, which avails most amplifiers that may not have unity gain stability.  Regarding
+the gain-bandwidth product, you want to have adequate bandwidth at the gain that you require.  Many times
+this will imply that you use a less compensated op-amp that perhaps is not unity gain stable in order to
+achieve a higher bandwidth at a high gain.  Since we are usually interested in a 20kHz bandwidth, and would
+prefer to keep our response reasonably flat at the high end of that range, it would be advisable to actually
+design for at least a 50kHz bandwidth, if not more.  If we assume we are designing an amplifier with a gain
+of 1000, we would need a guaranteed gain-bandwidth product of at lest 50MHz.
+
+By this point I am sure you are seeing some of the reasons why it is convenient to use an op-amp and not 
+design the circuit with discrete components.  You would be responsible for all compensation, would have a fairly
+hard time specifying the noise of the components, and would be left having to spend a lot of design time 
+determining the fitness of your design.  Moreover, the larger circuit would be less immune to picking up
+stray signals.  All in all this is an excellent example of a circuit where an op-amp is both a convenient
+and good choice.
+
+While I look at other options fairly often, I often personally use Linear Technology's 
+[LT1028](http://www.linear.com/docs/3480).  This op-amp sports a very good noise characteristic, a low
+shot noise inflection point (of 1/f corner), and a quite respectable gain-bandwidth product.  For measuring 
+noise in the normal audio band with gains up to 1000, this is an excellent op-amp to use.  The more
+highly compensated LT1128 is also an excellent op-amp, and is very useful for lower gain circuits.
+
+
+
+### Designing A Noise Amplifier
