@@ -7,7 +7,7 @@ that I market under the [Auteur Audio](http://auteuraudio.com/) brand, which exh
 unweighted noise level of about 1.7uV RMS into 33 ohms inclusive of spurious 60 Hertz measurement
 pickup not related to the noise of the amplifier (lead pickup).
 
-![Lilienfeld's Choir Spectral Density](LilienfeldsChoirSpectralDensity.png)
+![Lilienfeld's Choir Spectral Density](images/LilienfeldsChoirSpectralDensity.png)
 
 If you look at the spectral graph, particularly in the lower frequency range, say from 100 to 500 Hertz
 (discounting the 180 Hertz power line harmonic), you will note that the actual noise density is 
