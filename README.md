@@ -243,7 +243,7 @@ this will imply that you use a less compensated op-amp that perhaps is not unity
 achieve a higher bandwidth at a high gain.  Since we are usually interested in a 20kHz bandwidth, and would
 prefer to keep our response reasonably flat at the high end of that range, it would be advisable to actually
 design for at least a 50kHz bandwidth, if not more.  If we assume we are designing an amplifier with a gain
-of 1000, we would need a guaranteed gain-bandwidth product of at lest 50MHz.
+of 1000, we would need a guaranteed gain-bandwidth product of at least 50MHz.
 
 By this point I am sure you are seeing some of the reasons why it is convenient to use an op-amp and not 
 design the circuit with discrete components.  You would be responsible for all compensation, would have a fairly
@@ -260,4 +260,52 @@ highly compensated LT1128 is also an excellent op-amp, and is very useful for lo
 
 
 
-### Designing A Noise Amplifier
+### Designing The Noise Amplifier
+
+There are a few things that are important to keep in mind when designing this little amplifier.  First,
+while it may not be practical to use batteries for all of the gear that you might design, this is one
+very prominent exception.  You can very easily design your test equipment to use batteries.  This way
+you have great portability, isolation to reduce ground-coupled power line noise (extremely useful for a
+high gain amplifier), less of a concern with power supply rejection, etc.  Standard alkaline batteries
+work just fine, but you could also use lithium batteries.  The lithium iron phosphate chemistry is the
+best choice, as it has the lowest electrode noise and the most consistent discharge curve.  
+
+You are designing this amplifier for very high gain.  That said, since your op-amp amplifier is 
+basically an actively driven voltage divider, the ratio should be reasonably precise.  Not only that,
+but since it needs to have good high frequency performance vis-a-vis the gain-bandwidth product, you
+need to be sure to use resistors that are a good fit.  That means little stray capacitance and 
+low inductance.  Carbon composition and excessive spiraling of the resistive material are not 
+good choices.  
+
+Generally speaking an inverting amplifier will be more stable than a non-inverting amplifier.  In the
+inverting amplifier we have the additional benefit of having the non-inverting input grounded, 
+which helps with noise.  The equivalent input resistance of the inverting input is the parallel
+resistance of the source and feedback resistors, which is roughly the source resistance in 
+a high gain amplifier.  If you require a particularly high input impedance, you can use the
+op-amp as a non-inverting amplifier, but I am going to presume we are building the inverting
+amplifier so long as our device under test can tolerate the relatively low input impedance. 
+
+There are some considerations regarding the general order of magnitude of 
+resistor that you will be using.  Since the input noise of the LT1028 is about roughly the 
+same as a 50 ohm resistor, you will want to keep the input resistance in that neighborhood.  As an easy 
+rule of thumb, you will want to keep the input resistance at least about ten times the value
+of the output impedance of the device under test. For example, Lilienfeld's Choir has an output
+impedance of about 3 ohms.  I would want to use an input resistance of at least 30 ohms, an 
+would not want to exceed maybe a couple hundred ohms lest the noise from the input resistor be 
+pretty noticeable.  Something in the 50 to 100 ohm range would be a good choice.  Suppose we 
+use the 50 ohm resistor.  Since we need a gain of 1000, we will use a 50k feedback resistor.  
+
+What we want is the simplest circuit with the lowest resistances we can get away with.  That said,
+we are not interested in adding any sort of external compensation.  The scope can bandwidth limit
+the signal, we do not have interest in doing that.  We want the leads to this amplifier to be as 
+short as possible while being useful, so limiting to a few inches is generally ideal.  Since the 
+circuit is tiny and operates on batteries, this is generally easy to achieve.  Despite using 
+batteries for power, we do not want any power supply induced feedback that could cause 
+oscillation in our quite sensitive high gain amplifier circuit.  It is useful to decouple the 
+power supply pins with high quality capacitors.  Despite your scope being pretty good at rejecting
+common mode noise, we don't want to test that, so it is wise to run the output signal on shielded
+cable, and it may as well be BNC terminated so it works well with your scope.
+
+
+
+### How To Interpret Your Amplifier
