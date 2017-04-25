@@ -306,6 +306,27 @@ power supply pins with high quality capacitors.  Despite your scope being pretty
 common mode noise, we don't want to test that, so it is wise to run the output signal on shielded
 cable, and it may as well be BNC terminated so it works well with your scope.
 
+Here is an example:
+
+![Noise Amplifier](images/NoiseAmplifier.png)
+
+You couldn't ask for a simpler amplifier.  There is nothing to it other than making good decisions
+about the components and paying attention to the layout.  You want to keep stray capacitance to a
+minimum and keep lead lengths short.  As short as possible on the input since it will be *very* sensitive 
+to environmental noise.  Having the lower input impedance helps with this, as does the assumption that
+you can position your testing setup away from these types of noise.  If these considerations are not
+true then you will need to reconsider how you are approaching this problem.  You may need to consider 
+reconfiguring the amplifier to use the non-inverting input to afford higher input impedance, or even
+design an instrumentation amplifier so that you can achieve better common mode rejection.  You may
+want to consider placing a simple RC high pass filter after the amplifier to reject low frequency
+shot noise.  There are a lot of things that you should consider and make decisions about when you are 
+actually implementing this amplifier.  The point of this introduction is not to provide prescription
+on how to do it, but more to get you thinking about the salient issues and the fact that you can often
+design a better amplifier than you could buy assembled with minimum parts count for an application like this.
+
 
 
 ### How To Interpret Your Amplifier
+
+If you are attempting to measure signals with noise in the microvolt range in the full audio band, you will
+inevitably see the noise of even a very low noise amplifier such as the one detailed above.  
