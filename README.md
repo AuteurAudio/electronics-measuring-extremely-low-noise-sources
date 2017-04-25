@@ -342,12 +342,15 @@ If we suppose a bandwidth of 20KHz, we are looking at an input noise from the am
 the same bandwidth and assuming a temperature of 20 degrees Celsius, the 50 ohm source resistor will 
 generate another 127nV.  It is important to recall that uncorrelated noise adds in terms of power, not in terms
 of voltage, so the sum of these two noises is actually 175nV.  That is to say, if you were to short the input
-to ground in a perfectly isolated from environmental noise, you would anticipate for a 20KHz bandwidth to estimate
-an input noise of 175nV.  Since we have a gain of 1000, the noise that would be presented to the scope is
+to ground in a perfectly isolated from environmental noise situation, you would anticipate an input noise of 
+175nV.  Since we have a gain of 1000, the noise that would be presented to the scope is
 1000 times this figure, or 175uV.  Since we were discussing a full scale deflection of a millivolt for performing
 our measurements, this is not insignificant.  Despite creating an amplifier with a total input noise on par with
-a 100 ohm resistor, given the gain we are using the noise is almost 20% of full scale if full scale is a millivolt!
+a 100 ohm resistor, given the gain we are using the noise is almost 20% of full scale if full scale is a 
+millivolt.  Obviously you should actually measure what you are experiencing in practice, as the gain may not 
+be precise, the op-amp may not perform at exactly the rated noise, etc.  
 
+This gets us to the issue of how to measure the noise on the scope in the first place.  
 
 
 
