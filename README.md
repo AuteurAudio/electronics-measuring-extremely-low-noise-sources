@@ -348,9 +348,48 @@ to ground in a perfectly isolated from environmental noise situation, you would 
 our measurements, this is not insignificant.  Despite creating an amplifier with a total input noise on par with
 a 100 ohm resistor, given the gain we are using the noise is almost 20% of full scale if full scale is a 
 millivolt.  Obviously you should actually measure what you are experiencing in practice, as the gain may not 
-be precise, the op-amp may not perform at exactly the rated noise, etc.  
+be precise, the op-amp may not perform at exactly the rated noise, etc.  This gets us to the issue of how to 
+measure the noise on the scope in the first place.  
 
-This gets us to the issue of how to measure the noise on the scope in the first place.  
+Many sampling scopes effectively average the signal to achieve a lowered bandwidth.  That is, while the scope may 
+sample significantly faster than you are asking it to report, each recorded sample is the average of many 
+intermediate samples.  This is one way of accomplishing signal average, though there are others that various
+scopes may use.  The same can be true for other types of equipment, such as general purpose analog to digital 
+converters, but the focus is often less on details like signal averaging.  However, signal averaging is an important
+aspect of why we decided to use the sampling scope in the first place.  The reason for this is because the 
+magnitude of the noise is related to the bandwidth, and we are wanting to have a fixed bandwidth that is lower
+than the maximum bandwidth of the scope.  If we did not have signal averaging, we would be reporting a much 
+higher noise than we would be expecting.  If we do us use signal averaging, then we can safely use metrics 
+computed from the sampled data regarding the magnitude of the noise.  
 
+If we believe that the sample is averaged over each sample for a given bandwidth, then in any measurement 
+period of the scope (the full screen draw), we will have a collection of data that we can compute metrics 
+from.  What we are interested in is the standard deviation, which is the square root of the variance.  The
+reason for this is that it is a measure of the size of the noise distribution, in the same units as the 
+base measurement.  Analytically, we would compute this as the square root of the sum of the squared 
+distances from the mean.  However, the scope will do this for you, and it will call it the AC RMS 
+voltage.  The average DC voltage is effectively the mean, and the AC RMS voltage is the exact same 
+arithmetic as computing the standard deviation.  In order for this to be sensible, we need to feel 
+that the noise appears to be randomly distributed.  That is, there are no underlying undulations from
+power line interference, external noises, etc.  If we have those features, we would want to attempt to
+compensate for them.  Most sampling scopes will allow you to do some sort of signal averaging, which can
+have the effect of easily displaying *correlated* signals that can be hard to see in a single
+sweep.  If you have these spurious features, attempt to determine their magnitude precisely and 
+compensate for them.
 
+Now that you have a clean or compensated noise signal and know that you can use the AC RMS reporting from the scope
+to determine the standard deviation of the noise, we can take measurements.  Suppose from our previous
+evaluation of the baseline amplifier noise that we in fact had a 175uV AC RMS measurement on the scope.  Now 
+we are going to connect it to the device under test, and we are reading an AC RMS measurement of 750uV AC 
+RMS.  Again, these are *uncorrelated* noise signals, so they add in terms of power.  That is to say, 
+175uV squared + *something* squared = 750uV squared.  That something clearly is 730uV.  If the noise is dominant,
+even by this somewhat small factor (750uV versus 175uV), you can generally estimate it simply by taking
+the total noise measurement alone.  If, however, the two are more similar in value, you will need to perform
+the calculation.  Suppose the total was 250uV rather than 750uV.  In this case, the contribution from the 
+device under test is about 180uV.  Of course the pre-gain values of these figures are in nanovolts.  So long 
+as you have a clean noise signal, with all correlated aspects of the signal accounted for, this will give you 
+the unweighted, or broadband, audio noise.  Weighting is generally a means of making the figures looks 
+better by attenuating portions of the band, thereby reducing the reported noise.  While there may be some 
+rationale for it because of the dynamics of the human ear, it is generally used to make equipment appear better
+in specifications than it is.  
 
