@@ -329,4 +329,25 @@ design a better amplifier than you could buy assembled with minimum parts count 
 ### How To Interpret Your Amplifier
 
 If you are attempting to measure signals with noise in the microvolt range in the full audio band, you will
-inevitably see the noise of even a very low noise amplifier such as the one detailed above.  
+inevitably see the noise of even a very low noise amplifier such as the one detailed above.  You will need
+to be able to account for all of the noise, much of it being noise that you will need to estimate 
+analytically.  The noise at the input of a high gain amplifier is by far the most important, so we will 
+not worry much about anything else.  In this amplifier, you will have three main sources of noise:
+
+ * Intrinsic input noise of the op-amp
+ * Noise of the source resistor
+ * Noise of your amplifier
+ 
+If we suppose a bandwidth of 20KHz, we are looking at an input noise from the amplifier of about 120nV.  Using 
+the same bandwidth and assuming a temperature of 20 degrees Celsius, the 50 ohm source resistor will 
+generate another 127nV.  It is important to recall that uncorrelated noise adds in terms of power, not in terms
+of voltage, so the sum of these two noises is actually 175nV.  That is to say, if you were to short the input
+to ground in a perfectly isolated from environmental noise, you would anticipate for a 20KHz bandwidth to estimate
+an input noise of 175nV.  Since we have a gain of 1000, the noise that would be presented to the scope is
+1000 times this figure, or 175uV.  Since we were discussing a full scale deflection of a millivolt for performing
+our measurements, this is not insignificant.  Despite creating an amplifier with a total input noise on par with
+a 100 ohm resistor, given the gain we are using the noise is almost 20% of full scale if full scale is a millivolt!
+
+
+
+
