@@ -3,17 +3,16 @@
 This information relates to tools and techniques related to measuring low noise sources.  Of course 
 this is useful in most any discipline where low noise needs to be quantified, but the origin of the 
 study in my case is low noise audio amplifiers.  Case in point is [Lilienfeld's Choir](http://auteuraudio.com/lilienfelds-choir) 
-that I market under the [Auteur Audio](http://auteuraudio.com/) brand, which exhibits a full wideband
-unweighted noise level of about 1.7uV RMS into 33 ohms inclusive of spurious 60 Hertz measurement
-pickup not related to the noise of the amplifier (lead pickup).
+that I market under the [Auteur Audio](http://auteuraudio.com/) brand, which exhibits a reported full 
+audio spectrum (unweighted) noise level of about 1.7uV RMS into 33 ohms inclusive of spurious 
+60 Hertz measurement pickup not related to the noise of the amplifier (lead pickup).  If you discount the 
+lead pickup, the noise is under 1uV RMS.
 
 ![Lilienfeld's Choir Spectral Density](images/LilienfeldsChoirSpectralDensity.png)
 
 If you look at the spectral graph, particularly in the lower frequency range, say from 100 to 500 Hertz
 (discounting the 180 Hertz power line harmonic), you will note that the actual noise density is 
-quite low, nearly -150dBV.  This equates to a slightly better than -120dBV wideband audio performance, which
-is pretty good.  Pretty good in part because this figure equates to >120dB SNR for typical listening 
-levels (rather than maximum output, which is often the improbable output level typically reported).  If 
+quite low, nearly -150dBV.  This equates to a slightly better than -120dBV wideband audio performance.  If 
 you have ever paid attention to the specifications on 
 [Audio Precision's high end gear](https://www.ap.com/analyzers-accessories/apx555/), you may note that 
 this is getting pretty close to the limits of resolution.  It might be a little tricky
@@ -386,10 +385,27 @@ RMS.  Again, these are *uncorrelated* noise signals, so they add in terms of pow
 even by this somewhat small factor (750uV versus 175uV), you can generally estimate it simply by taking
 the total noise measurement alone.  If, however, the two are more similar in value, you will need to perform
 the calculation.  Suppose the total was 250uV rather than 750uV.  In this case, the contribution from the 
-device under test is about 180uV.  Of course the pre-gain values of these figures are in nanovolts.  So long 
-as you have a clean noise signal, with all correlated aspects of the signal accounted for, this will give you 
+device under test is about 180uV.  Of course the pre-gain values of these figures are in nanovolts.  The limit 
+of this approach will be when the noisy signal you are measuring is much smaller than the noise of the 
+amplifier.  For correlated signals there are ways of recovering the underlying 
+smaller signal (think of lock-in amplifiers), but for uncorrelated noise you need the best low noise amplifier 
+you are willing to afford or build.  
+
+So long as you have a clean noise signal, with all correlated aspects of the signal accounted for, this will give you 
 the unweighted, or broadband, audio noise.  Weighting is generally a means of making the figures looks 
 better by attenuating portions of the band, thereby reducing the reported noise.  While there may be some 
 rationale for it because of the dynamics of the human ear, it is generally used to make equipment appear better
 in specifications than it is.  
 
+
+
+### Conclusion
+
+The point of this document was to arm you with very basic knowledge of how to specify and test low noise 
+equipment.  There are many pieces of great gear out there for testing audio equipment, the Audio Precision gear 
+being some of the best, but it still leaves a gap in precise measurement of equipment that has output noise 
+on the order of the test equipment noise floor.  Fortunately, with some thought, it isn't all that hard to 
+do a good job quantifying these low level noise measurements using common bench equipment.  Armed with what 
+has been presented here, you ought to be able to use commonly available parts and bench equipment to measure 
+broadband noise voltages down to roughly the 100nV level.  For all but the most demanding tasks, this should be 
+sufficient.
