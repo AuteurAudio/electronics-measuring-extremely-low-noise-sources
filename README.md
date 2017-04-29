@@ -327,6 +327,10 @@ design a better amplifier than you could buy assembled with minimum parts count 
 
 ### How To Interpret Your Amplifier
 
+This section is augmented by the informative Jupyter notebooks [Noise Addition](jupyter/NoiseAddition.ipynb) and 
+[Noise Calculation](jupyter/NoiseCalculation.ipynb).  These notebooks walk you through some examples of computing
+with *uncorrelated* noise, and compensating for the presence of *correlated* noice, as discussed in this section.
+
 If you are attempting to measure signals with noise in the microvolt range in the full audio band, you will
 inevitably see the noise of even a very low noise amplifier such as the one detailed above.  You will need
 to be able to account for all of the noise, much of it being noise that you will need to estimate 
@@ -409,3 +413,13 @@ do a good job quantifying these low level noise measurements using common bench 
 has been presented here, you ought to be able to use commonly available parts and bench equipment to measure 
 broadband noise voltages down to roughly the 100nV level.  For all but the most demanding tasks, this should be 
 sufficient.
+
+Regarding Lilienfeld's Choir, while we don't have the actual raw data from the AP tests, we can infer some information
+about the noise and estimate that the actual thermal noise of the amplifier is about 0.8uV over the normal audio
+band.  This equates to a noise density of 5.6nV/√Hz, which is pretty good.  It is about 24dB greater than the lowest
+noise phono preamplifiers in the world (an example being the Pass Lab's 
+[Xs Phono](https://passlabs.com/sites/default/files/pass_product_brochure_15.pdf)).  Compared to other power amplifiers
+that can produces a few Watt output, Lilienfeld's Choir has good performance.  What matters most is that we are able to 
+understand the amplifier more and improve it.  Knowing that the noise density is 5.6nV/√Hz opens the door to questions
+regarding how we can further reduce it, investigate if there are topology considerations that could help, etc.  It is
+very important to know how to quantify your product in order to make it better.
