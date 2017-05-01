@@ -418,8 +418,9 @@ Regarding Lilienfeld's Choir, while we don't have the actual raw data from the A
 about the noise and estimate that the actual thermal noise of the amplifier is about 0.8uV over the normal audio
 band.  This equates to a noise density of 5.6nV/√Hz, which is pretty good.  It is about 24dB greater than the lowest
 noise phono preamplifiers in the world (an example being the Pass Lab's 
-[Xs Phono](https://passlabs.com/sites/default/files/pass_product_brochure_15.pdf)).  Compared to other power amplifiers
-that can produces a few Watt output, Lilienfeld's Choir has good performance.  What matters most is that we are able to 
+[Xs Phono](https://passlabs.com/sites/default/files/pass_product_brochure_15.pdf)).  On the other hand, it is 
+quite low compared with other low noise peers (First Watt's [F1 and F2 amps](http://www.firstwatt.com/prod.html) being 
+good examples, though are a bit larger amplifiers). What matters most is that we are able to 
 understand the amplifier more and improve it.  Knowing that the noise density is 5.6nV/√Hz opens the door to questions
 regarding how we can further reduce it, investigate if there are topology considerations that could help, etc.  It is
 very important to know how to quantify your product in order to make it better.
