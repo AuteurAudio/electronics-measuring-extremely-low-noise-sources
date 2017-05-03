@@ -4,9 +4,9 @@ This information relates to tools and techniques related to measuring low noise 
 this is useful in most any discipline where low noise needs to be quantified, but the origin of the 
 study in my case is low noise audio amplifiers.  Case in point is [Lilienfeld's Choir](http://auteuraudio.com/lilienfelds-choir) 
 that I market under the [Auteur Audio](http://auteuraudio.com/) brand, which exhibits a reported full 
-audio spectrum (unweighted) noise level of about 1.7uV RMS into 33 ohms inclusive of spurious 
+audio spectrum (unweighted) noise level of about 1.7μV RMS into 33 ohms inclusive of spurious 
 60 Hertz measurement pickup not related to the noise of the amplifier (lead pickup).  If you discount the 
-lead pickup, the noise is under 1uV RMS.
+lead pickup, the noise is under 1μV RMS.
 
 ![Lilienfeld's Choir Spectral Density](images/LilienfeldsChoirSpectralDensity.png)
 
@@ -138,10 +138,10 @@ do this.
 If, however, we were to use a 1 Megohm source impedance, we would not have that extra amplification requirement,
 and we would be able to keep the noise lower.  The thing to keep in mind, however, is that there is no
 free lunch with respect to the input noise.  If you used a 1 Megohm input resistance you would have 100 times
-the Johnson noise, or 12.7uV.  What you would typically do for a grossly mismatched impedance for an AC signal
+the Johnson noise, or 12.7μV.  What you would typically do for a grossly mismatched impedance for an AC signal
 would be to transformer couple the signal with a high quality transformer.  Notice that you don't gain anything
 doing this with respect to the noise.  The same square root appears in the arithmetic for the impedance
-matching, and you still end up with a souce that *looks like* 1 Megohm and has a thermal noise of 12.7uV.  Grossly
+matching, and you still end up with a souce that *looks like* 1 Megohm and has a thermal noise of 12.7μV.  Grossly
 increasing the source impedance simply makes the PAR 113 hard to drive and also exhibits SNR loss (or an
 increase in noise figure).
 
@@ -150,7 +150,7 @@ impedance for the source your are interested in.  For high gain circuits in part
 of the noise is directly related to the input impedance and the input impedance matching.  It is also fairly
 handy to have a rough knowledge of the Johnson noise for various impedances, as that gives you a sense of 
 what you are designing for.  For example, a 10k resistor has a thermal noise at room temperature and 20KHz 
-bandwidth of about 1.8uV.  For a point of reference refering to earlier in the story, what we are saying is 
+bandwidth of about 1.8μV.  For a point of reference refering to earlier in the story, what we are saying is 
 that inclusive of the power line noise that is a *significant* component of the total noise, and unrelated
 to the noise of the amplifier, Lilienfeld's Choir *still* exhibits noise that is lower than what you would experience
 if you hooked your headphones up to a 10k resistor.  What we are also saying here is that while some equipment
@@ -347,7 +347,7 @@ generate another 127nV.  It is important to recall that uncorrelated noise adds 
 of voltage, so the sum of these two noises is actually 175nV.  That is to say, if you were to short the input
 to ground in a perfectly isolated from environmental noise situation, you would anticipate an input noise of 
 175nV.  Since we have a gain of 1000, the noise that would be presented to the scope is
-1000 times this figure, or 175uV.  Since we were discussing a full scale deflection of a millivolt for performing
+1000 times this figure, or 175μV.  Since we were discussing a full scale deflection of a millivolt for performing
 our measurements, this is not insignificant.  Despite creating an amplifier with a total input noise on par with
 a 100 ohm resistor, given the gain we are using the noise is almost 20% of full scale if full scale is a 
 millivolt.  Obviously you should actually measure what you are experiencing in practice, as the gain may not 
@@ -382,14 +382,14 @@ compensate for them.
 
 Now that you have a clean or compensated noise signal and know that you can use the AC RMS reporting from the scope
 to determine the standard deviation of the noise, we can take measurements.  Suppose from our previous
-evaluation of the baseline amplifier noise that we in fact had a 175uV AC RMS measurement on the scope.  Now 
-we are going to connect it to the device under test, and we are reading an AC RMS measurement of 750uV AC 
+evaluation of the baseline amplifier noise that we in fact had a 175μV AC RMS measurement on the scope.  Now 
+we are going to connect it to the device under test, and we are reading an AC RMS measurement of 750μV AC 
 RMS.  Again, these are *uncorrelated* noise signals, so they add in terms of power.  That is to say, 
-175uV squared + *something* squared = 750uV squared.  That something clearly is 730uV.  If the noise is dominant,
-even by this somewhat small factor (750uV versus 175uV), you can generally estimate it simply by taking
+175μV squared + *something* squared = 750μV squared.  That something clearly is 730μV.  If the noise is dominant,
+even by this somewhat small factor (750μV versus 175μV), you can generally estimate it simply by taking
 the total noise measurement alone.  If, however, the two are more similar in value, you will need to perform
-the calculation.  Suppose the total was 250uV rather than 750uV.  In this case, the contribution from the 
-device under test is about 180uV.  Of course the pre-gain values of these figures are in nanovolts.  The limit 
+the calculation.  Suppose the total was 250μV rather than 750μV.  In this case, the contribution from the 
+device under test is about 180μV.  Of course the pre-gain values of these figures are in nanovolts.  The limit 
 of this approach will be when the noisy signal you are measuring is much smaller than the noise of the 
 amplifier.  For correlated signals there are ways of recovering the underlying 
 smaller signal (one type of correlated signal is one that can be tracked by a PLL, so think of lock-in 
@@ -417,7 +417,7 @@ broadband noise voltages down to roughly the 100nV level.  For all but the most 
 sufficient.
 
 Regarding Lilienfeld's Choir, while we don't have the actual raw data from the AP tests, we can infer some information
-about the noise and estimate that the actual thermal noise of the amplifier is about 0.8uV over the normal audio
+about the noise and estimate that the actual thermal noise of the amplifier is about 0.8μV over the normal audio
 band.  This equates to a noise density of 5.6nV/√Hz, which is pretty good.  It is about 24dBV greater than the lowest
 noise phono preamplifiers in the world (an example being the Pass Lab's 
 [Xs Phono](https://passlabs.com/sites/default/files/pass_product_brochure_15.pdf)).  On the other hand, it is 
