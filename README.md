@@ -392,7 +392,9 @@ the calculation.  Suppose the total was 250uV rather than 750uV.  In this case, 
 device under test is about 180uV.  Of course the pre-gain values of these figures are in nanovolts.  The limit 
 of this approach will be when the noisy signal you are measuring is much smaller than the noise of the 
 amplifier.  For correlated signals there are ways of recovering the underlying 
-smaller signal (think of lock-in amplifiers), but for uncorrelated noise you need the best low noise amplifier 
+smaller signal (one type of correlated signal is one that can be tracked by a PLL, so think of lock-in 
+amplifiers; [here](documents/LockInAmplifiers.pdf) is a document about how
+they work), but for uncorrelated noise you need the best low noise amplifier 
 you are willing to afford or build.  
 
 So long as you have a clean noise signal, with all correlated aspects of the signal accounted for, this will give you 
@@ -416,11 +418,19 @@ sufficient.
 
 Regarding Lilienfeld's Choir, while we don't have the actual raw data from the AP tests, we can infer some information
 about the noise and estimate that the actual thermal noise of the amplifier is about 0.8uV over the normal audio
-band.  This equates to a noise density of 5.6nV/√Hz, which is pretty good.  It is about 24dB greater than the lowest
+band.  This equates to a noise density of 5.6nV/√Hz, which is pretty good.  It is about 24dBV greater than the lowest
 noise phono preamplifiers in the world (an example being the Pass Lab's 
 [Xs Phono](https://passlabs.com/sites/default/files/pass_product_brochure_15.pdf)).  On the other hand, it is 
 quite low compared with other low noise peers (First Watt's [F1 and F2 amps](http://www.firstwatt.com/prod.html) being 
-good examples, though are a bit larger amplifiers). What matters most is that we are able to 
-understand the amplifier more and improve it.  Knowing that the noise density is 5.6nV/√Hz opens the door to questions
-regarding how we can further reduce it, investigate if there are topology considerations that could help, etc.  It is
-very important to know how to quantify your product in order to make it better.
+good examples, though are a bit larger amplifiers). In the case of the best of the referenced list, Lilienfeld's Choir
+measures up at about 31dBV *lower* noise.
+
+What matters most is that we are able to understand the amplifier more and improve it.  Knowing that the noise 
+density is 5.6nV/√Hz opens the door to questions regarding how we can further reduce it.  It is very important 
+to know how to quantify your product in order to make it better.  In the case of Lilienfeld's Choir, it is 
+disappointing that the noise density measures at that level.  I would expect based on the noise of the specific 
+devices used in Lilienfeld's Choir that it would be lower.  The question is what is the cause of the higher than 
+expected result.  Is there power supply noise coupling to the output, and should the amplifier topology be to 
+blame?  Perhaps there is an unexpected opportunity for noise generation, something like an unseen injection 
+coupled in an unexpected way.  Knowing that it is higher gives me the opportunity to reflect on the design
+and lower it further!
