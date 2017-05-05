@@ -423,7 +423,8 @@ noise phono preamplifiers in the world (an example being the Pass Lab's
 [Xs Phono](https://passlabs.com/sites/default/files/pass_product_brochure_15.pdf)).  On the other hand, it is 
 quite low compared with other low noise peers (First Watt's [F1 and F2 amps](http://www.firstwatt.com/prod.html) being 
 good examples, though are a bit larger amplifiers). In the case of the best of the referenced list, Lilienfeld's Choir
-measures up at about 31dBV *lower* noise.
+measures up at about 31dBV *lower* noise.  Also, just to check that you actually looked at some of the references, 
+this is only slightly higher baseline noise than the best of Stanford Research Systems' lock-in amplifiers.  Pretty good.  
 
 What matters most is that we are able to understand the amplifier more and improve it.  Knowing that the noise 
 density is 5.6nV/√Hz opens the door to questions regarding how we can further reduce it.  It is very important 
