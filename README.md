@@ -72,14 +72,17 @@ Shot noise is noise that originates from Poisson processes.  This means that it 
 from the occurance of some event that has a probability of happening after some time.  Some electron
 moves suddenly and affects the net charge on a gate, for example.  Because of the nature of the noise
 model, the noise has an intensity that is inversely proportional to the time interval (and hence the 
-frequency), so this type of noise is also often called 1/f noise.  For a great number of low noise 
-devices, you will note that there is an indication of some frequency where the 1/f noise becomes 
-dominant.  For example, take a look at the datasheet for the [LT1128](http://www.linear.com/docs/3480) 
-op-amp.  It cites a 1/f corner frequency, which is the frequency below which the shot noise is significant 
-compared with the Johnson noise in the example circuit.  If the device you are interested in does not 
-cite information about shot noise, you might reconsider whether or not the product was actually 
-intended for low noise application.  The general task as a designer is to position the shot noise so 
-that it is below human hearing.  This places your product where the Johnson noise is you primary concern.
+frequency), so this type of noise is also often called 1/f noise.  1/f noise is also characterized by 
+fluctuations in resistance and the effect of current through resistors, for which a similar process
+model is derived.  Some people discuss these types of noise separately, some lump it all under 
+the 1/f heading.  For a great number of low noise  devices, you will note that there is an indication 
+of some frequency where the 1/f noise becomes  dominant.  For example, take a look at the datasheet 
+for the [LT1128](http://www.linear.com/docs/3480) op-amp.  It cites a 1/f corner frequency, which is 
+the frequency below which the shot noise is significant compared with the Johnson noise in the 
+example circuit.  If the device you are interested in does not cite information about shot noise, 
+you might reconsider whether or not the product was actually intended for low noise 
+application.  The general task as a designer is to position the shot noise so that it is below 
+human hearing.  This places your product where the Johnson noise is you primary concern.
 
 
 
