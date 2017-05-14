@@ -1,6 +1,6 @@
 # Measuring Extremely Low Noise Sources
 
-This information relates to tools and techniques related to measuring low noise sources.  Of course 
+The information in this repo relates to tools and techniques related to measuring low noise sources.  Of course 
 this is useful in most any discipline where low noise needs to be quantified, but the origin of the 
 study in my case is low noise audio amplifiers.  Case in point is [Lilienfeld's Choir](http://auteuraudio.com/lilienfelds-choir) 
 that I market under the [Auteur Audio](http://auteuraudio.com/) brand, which exhibits a reported full 
