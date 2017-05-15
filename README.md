@@ -44,7 +44,7 @@ amplifier.  In my mind, noise and responsiveness are the most critical aspects o
 
 There are three types of noise that we are generally interested in:
 
- * Shot noise
+ * Shot noise and 1/f noise
  * Johnson noise
  * Spurious signal noise
  
@@ -73,16 +73,24 @@ from the occurance of some event that has a probability of happening after some 
 moves suddenly and affects the net charge on a gate, for example.  Because of the nature of the noise
 model, the noise has an intensity that is inversely proportional to the time interval (and hence the 
 frequency), so this type of noise is also often called 1/f noise.  1/f noise is also characterized by 
-fluctuations in resistance and the effect of current through resistors, for which a similar process
-model is derived.  Some people discuss these types of noise separately, some lump it all under 
-the 1/f heading.  For a great number of low noise  devices, you will note that there is an indication 
+fluctuations in resistance and the effect of current through resistors.  The process shares similarity
+in the sense that the noise is related to a stochastic process, and with a similar resulting quality of 
+the noise (e.g. inversely proportional to frequency), but that is about it.  In the literature, most 
+people discuss these types of noise separately, though some lump it all under the 1/f heading.  Sometimes
+noise with similar origin is called flicker noise.  The thing to keep in mind is the general nature of
+the origin of the noise, and more importantly the spectral density of it.
+
+For a great number of low noise  devices, you will note that there is an indication 
 of some frequency where the 1/f noise becomes  dominant.  For example, take a look at the datasheet 
 for the [LT1128](http://www.linear.com/docs/3480) op-amp.  It cites a 1/f corner frequency, which is 
-the frequency below which the shot noise is significant compared with the Johnson noise in the 
-example circuit.  If the device you are interested in does not cite information about shot noise, 
+the frequency below which the 1/f noise is significant compared with the Johnson noise in the 
+example circuit.  This point may also be called a knee or a number of other like terms.  If the 
+device you are interested in does not cite information about this type of noise, 
 you might reconsider whether or not the product was actually intended for low noise 
-application.  The general task as a designer is to position the shot noise so that it is below 
-human hearing.  This places your product where the Johnson noise is you primary concern.
+application.  It is critical to consider the low frequency noise that has magnitude inversely 
+proportional to frequency to have a good understanding of the noise you can expect. The general 
+task as a designer of audio equipment is to position the 1/f noise so that it is below 
+human hearing.  The reason is because this places your product where the Johnson noise is you primary concern.
 
 
 
